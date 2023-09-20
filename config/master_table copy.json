@@ -1,0 +1,20 @@
+[
+    {
+        "TABLE_NAME": "CDP_PUN.DATA_ACQ.POH",
+        "PRIMARY KEY": "CDP__PRODUCER_NAME, CDP__FEED_NAME, CDP__UNIQUE_KEY",
+        "TABLE_DESCRIPTION": "This table has the purchase order history for many providers also know as hospitals.",
+        "COLUMN DEFINITIONS" : {"CDP__PRODUCER_NAME": "Producer"}
+    },
+    {
+        "TABLE_NAME": "CDP_PUN.DATA_ACQ.PCAT",
+        "PRIMARY KEY": "CDP__PRODUCER_NAME, CDP__FEED_NAME",
+        "TABLE_DESCRIPTION": "This table has the provider catalog details which list the items in a providers calatlog.",
+        "COLUMN DEFINITIONS" : {}
+    },
+    {
+        "TABLE_NAME": "CDP_PUN.DATA_ACQ.PCAT_DEDUPE",
+        "PRIMARY KEY": "CDP__PRODUCER_NAME, CDP__FEED_NAME, CDP__ITEM_KEY",
+        "TABLE_DESCRIPTION": "This table has the provider catalog details which list the items in a providers calatlog. This table is loaded from the DATA_ACQ.PCAT, and data was deduped based on all the columns from providers and a unique set of recrods are kept.",
+        "COLUMN DEFINITIONS" : {}
+    }
+]

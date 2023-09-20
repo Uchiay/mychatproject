@@ -1,0 +1,44 @@
+[
+    {
+        "TABLE_NAME": "SNOWFLAKE_SAMPLE_DATA.TPCH_SF1.CUSTOMER",
+        "PRIMARY KEY": "C_CUSTKEY",
+        "TABLE_DESCRIPTION": "This table has the purchase order history for many providers also know as hospitals.",
+        "JOIN_OPTIONS": {"TPCH_SF1.NATION": "C_NATIONKEY"}
+    },
+    {
+        "TABLE_NAME": "SNOWFLAKE_SAMPLE_DATA.TPCH_SF1.NATION",
+        "PRIMARY KEY": "N_NATIONKEY",
+        "TABLE_DESCRIPTION": "This table has the provider catalog details which list the items in a providers calatlog.",
+        "JOIN_OPTIONS" : {"TPCH_SF1.CUSTOMER":  "N_REGIONKEY"}
+    },
+    {
+        "TABLE_NAME": "SNOWFLAKE_SAMPLE_DATA.TPCH_SF1.REGION",
+        "PRIMARY KEY": "R_REGIONKEY",
+        "TABLE_DESCRIPTION": "This table has the provider catalog details which list the items in a providers calatlog.",
+        "JOIN_OPTIONS" : {"TPCH_SF1.NATION":  "N_REGIONKEY"}
+    },
+    {
+        "TABLE_NAME": "SNOWFLAKE_SAMPLE_DATA.TPCH_SF1.SUPPLIER",
+        "PRIMARY KEY": "S_SUPPKEY",
+        "TABLE_DESCRIPTION": "This table has the provider catalog details which list the items in a providers calatlog.",
+        "JOIN_OPTIONS" : {"TPCH_SF1.NATION":  "N_NATIONKEY"}
+    },
+    {
+        "TABLE_NAME": "SNOWFLAKE_SAMPLE_DATA.TPCH_SF1.PARTSUPP",
+        "PRIMARY KEY": "PS_SUPPKEY",
+        "TABLE_DESCRIPTION": "This table has the provider catalog details which list the items in a providers calatlog.",
+        "JOIN_OPTIONS" : {"TPCH_SF1.SUPPLIER":  "S_SUPPKEY", "TPCH_SF1.PART": "S_PARTKEY"}
+    },
+    {
+        "TABLE_NAME": "SNOWFLAKE_SAMPLE_DATA.TPCH_SF1.PART",
+        "PRIMARY KEY": "P_PARTKEY",
+        "TABLE_DESCRIPTION": "This table has the provider catalog details which list the items in a providers calatlog.",
+        "JOIN_OPTIONS" : {}
+    },
+    {
+        "TABLE_NAME": "SNOWFLAKE_SAMPLE_DATA.TPCH_SF1.ORDERS",
+        "PRIMARY KEY": "O_ORDERKEY",
+        "TABLE_DESCRIPTION": "This table has the provider catalog details which list the items in a providers calatlog.",
+        "JOIN_OPTIONS" : {"TPCH_SF1.CUSTOMER":  "O_CUSTKEY"}
+    }
+]
