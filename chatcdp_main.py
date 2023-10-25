@@ -54,13 +54,13 @@ if st.session_state.messages[-1]["role"] != "assistant":
         # print('sql_match: ', sql_match)
         if sql_match:
             sql = sql_match.group(1)
-            conn = st.experimental_connection("snowpark")
-            try:
+            conn = st.experimental_connection("snowpark", ttl=5)
+            # try:
                 res = conn.query(sql)
                 # print(res)
                 message["results"] = res
                 st.dataframe(message["results"])
-            except Exception:
-                st.write("!!!! Too many columns in output. Not displaying the output. !!!!")
+            # except Exception:
+                # st.write("!!!! Too many columns in output. Not displaying the output. !!!!")
 
         st.session_state.messages.append(message)
